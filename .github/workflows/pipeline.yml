@@ -41,3 +41,6 @@ jobs:
 
       - name: Gradle Build
         uses: gradle/gradle-build-action@v3
+
+      - name: Gradle Action
+        uses: gradle/actions/setup-gradle@v3
