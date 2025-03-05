@@ -46,6 +46,6 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: SonarQube Scan
-        uses: antonioaversa/sonarcloud-github-action@v4.0.0
+        uses: sonarsource/sonarcloud-github-action@v4.0.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
