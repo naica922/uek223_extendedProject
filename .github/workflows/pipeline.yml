@@ -55,6 +55,4 @@ jobs:
         with:
           context: ./Project/.
           push: true
-          tags: user/app:latest
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
+          tags: naica922/app:latest
