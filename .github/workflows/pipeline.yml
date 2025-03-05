@@ -4,15 +4,16 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello world
+      - name: Hello world with secret
         run: echo "Hello World! - the secret is ${{ secrets.MY_SECRET }}"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Script
         run: |
-          chmod +x script.sh
-          ./script.sh
+          chmod +x run.sh
+          ./run.sh
 
       - name: Executing remote SSH commands using password
         uses: appleboy/ssh-action@master
