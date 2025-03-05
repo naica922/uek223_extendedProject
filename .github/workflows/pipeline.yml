@@ -38,5 +38,3 @@ jobs:
           port: 2222
           script: |
             chmod +x run.sh
-            export MY_SECRET="${{ secrets.MY_SECRET }}"
-            run.sh
