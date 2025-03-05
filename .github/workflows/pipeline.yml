@@ -38,6 +38,8 @@ jobs:
           port: 2222
           script: |
             chmod +x run.sh
+            export DOCKER_HUB_TOKEN="${{ secrets.DOCKER_HUB_TOKEN }}"
+            ./run.sh
 
       - name: Gradle Build
         uses: gradle/gradle-build-action@v3
