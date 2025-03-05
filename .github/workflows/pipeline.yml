@@ -50,7 +50,13 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Build and push
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: naica922
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./Project/.
