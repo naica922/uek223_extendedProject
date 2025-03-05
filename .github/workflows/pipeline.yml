@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Script
+      - name: Run Script
         run: |
           chmod +x run.sh
           ./run.sh
