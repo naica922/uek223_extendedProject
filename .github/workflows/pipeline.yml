@@ -10,10 +10,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Script
-        run: |
-          chmod +x run.sh
-          ./run.sh
+      - name: Copy script to remote server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 2222
+          source: run.sh
+          target: /tmp/run.sh
+
+      - name: Execute script on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 2222
+          script: |
+            chmod +x /tmp/run.sh
+            export MY_SECRET="${{ secrets.MY_SECRET }}"
+            /tmp/run.sh
 
       - name: Executing remote SSH commands using password
         uses: appleboy/ssh-action@master
