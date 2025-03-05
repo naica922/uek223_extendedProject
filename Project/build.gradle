@@ -57,11 +57,11 @@ dependencies {
 sonar {
 	properties {
 		property "sonar.projectKey", "nypag-1_uk-223"
+		property "sonar.organization", "nypag-1"	
 		property "sonar.token","92d1ecda325d3ff2db32d35611091f1ce7ba79b9"
-		property "sonar.organization", "nypag-1"
-		property "sonar.host.url", "https://sonarcloud.io"
+		 property "sonar.host.url", "https://sonarcloud.io"
 		property "sonar.qualitygate.wait", true
-	}
+}
 }
 test {
 	useJUnitPlatform()
