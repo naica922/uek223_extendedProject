@@ -49,4 +49,3 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@v5.0.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-s
