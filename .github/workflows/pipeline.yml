@@ -38,3 +38,6 @@ jobs:
           port: 2222
           script: |
             chmod +x run.sh
+
+      - name: Gradle Build
+        uses: gradle/gradle-build-action@v3
