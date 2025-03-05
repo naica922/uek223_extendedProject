@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 2222
           source: run.sh
-          target: /test/run.sh
+          target: /run.sh
 
       - name: Execute script on remote server
         uses: appleboy/ssh-action@master
@@ -28,9 +28,9 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 2222
           script: |
-            chmod +x /test/run.sh
+            chmod +x /run.sh
             export MY_SECRET="${{ secrets.MY_SECRET }}"
-            /test/run.sh
+            /run.sh
 
       - name: Executing remote SSH commands using password
         uses: appleboy/ssh-action@master
