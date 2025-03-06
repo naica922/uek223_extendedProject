@@ -28,6 +28,14 @@ services:
       JWT_EXPIRATION_MILLIS: 100000000
     depends_on:
       - db
+  frontend:
+    image: naica922/app:latest
+    ports:
+      - "80:80"
+    environment:
+      REACT_APP_BACKEND_URL: http://localhost:8080
+    depends_on:
+      - backend
 
 volumes:
   postgres-data:
