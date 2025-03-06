@@ -72,12 +72,6 @@ jobs:
           push: true
           tags: naica922/app:latest
 
-  Docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Copy script to remote server
         uses: appleboy/scp-action@master
         with:
