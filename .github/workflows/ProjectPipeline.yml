@@ -15,4 +15,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 2222
           script: |
-            chmod +x projectScript.sh
+            sh dockerScript.sh
